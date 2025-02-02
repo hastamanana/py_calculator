@@ -15,7 +15,7 @@ def multi(x: int, y: int) -> int:
 
 def div(x: int, y: int) -> float:
     if y == 0:
-        raise ZeroDivisionError("Деление на ноль!")
+        raise ZeroDivisionError('Деление на ноль!')
 
     return x / y
 
@@ -26,19 +26,19 @@ def power(base: int, exp: int) -> int:
 
 def mod(x: int, y: int) -> int | float:
     if y == 0:
-        raise ZeroDivisionError("Деление на ноль!")
+        raise ZeroDivisionError('Деление на ноль!')
 
     return x % y
 
 
 def calc(a: int, b: int, oper: str) -> float | int | str:
     callbacks: dict[str, Callable] = {
-        "+": lambda x, y: x + y,
-        "-": sub,
-        "*": multi,
-        "/": div,
-        "^": power,
-        "%": mod,
+        '+': lambda x, y: x + y,
+        '-': sub,
+        '*': multi,
+        '/': div,
+        '^': power,
+        '%': mod,
     }
 
     func: Callable = callbacks.get(oper)
@@ -52,7 +52,7 @@ def run() -> None:
     try:
         a: int = int(input('Введите число 1: '))
         b: int = int(input('Введите число 2: '))
-        oper: str = input(f"Введите операцию {available_operations}: ")
+        oper: str = input(f'Введите операцию {available_operations}: ')
 
         if oper not in available_operations:
             print(
